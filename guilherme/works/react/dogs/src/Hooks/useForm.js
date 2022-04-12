@@ -6,6 +6,15 @@ const types = {
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
     message: 'Fill in a valid email',
   },
+  password: {
+    regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
+    message:
+      'The password need a letter in capital, a number and must be greater than 8 characters',
+  },
+  number: {
+    regex: /^\d+$/,
+    message: 'Only numbers',
+  },
 };
 
 const useForm = (type) => {

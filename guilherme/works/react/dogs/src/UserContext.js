@@ -28,9 +28,12 @@ export const UserStorage = ({ children }) => {
         } finally {
           setLoading(false);
         }
+      } else {
+        setLogin(false);
       }
     }
-  }, []);
+    autoLogin();
+  }, [userLogout]);
 
   async function getUser(token) {
     const { url, options } = USER_GET(token);
