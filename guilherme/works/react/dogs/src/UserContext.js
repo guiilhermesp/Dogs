@@ -48,11 +48,12 @@ export const UserStorage = ({ children }) => {
       setError(null);
       setLoading(true);
       const { url, options } = TOKEN_POST({ username, password });
-      const tokenResponse = await fetch(url, options);
-      if (!token.ok) throw new Error(`Error: ${tokenResponse.statusText}`);
-      const { token } = await tokenResponse.json();
+      const tokenRes = await fetch(url, options);
+      if (!tokenRes.ok) throw new Error(`Error: ${tokenRes.statusText}`);
+      const { token } = await tokenRes.json();
       window.localStorage.setItem('token', token);
       await getUser(token);
+      navigate('/account');
     } catch (err) {
       setError(err.message);
       setLogin(false);

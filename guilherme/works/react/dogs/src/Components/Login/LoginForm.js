@@ -40,10 +40,10 @@ const LoginForm = () => {
       <div className={styles.register}>
         <h2 className={styles.subtitle}>Register</h2>
         <p>Don't you have an account yet?</p>
+        <Link className={stylesBtn.button} to="/login/create">
+          Register
+        </Link>
       </div>
-      <Link className={stylesBtn.button} to="/login/create">
-        Register
-      </Link>
     </section>
   );
 };
