@@ -11,10 +11,10 @@ const UserHeader = () => {
     const { pathname } = location;
     let name = '';
     switch (pathname) {
-      case '/account/post':
+      case '/conta/postar':
         name = 'Post a photo';
         break;
-      case '/account/statistics':
+      case '/conta/estatisticas':
         name = 'Statistics';
         break;
       default:

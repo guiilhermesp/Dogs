@@ -34,15 +34,15 @@ const UserHeaderNav = () => {
           mobileMenu && styles.navMobileActive
         }`}
       >
-        <NavLink to="/account" end>
+        <NavLink to="/conta" end>
           <MyPhotos />
           {mobile && 'My photos'}
         </NavLink>
-        <NavLink to="/account/stats">
+        <NavLink to="/conta/estatisticas">
           <Statistics />
           {mobile && 'Statistics'}
         </NavLink>
-        <NavLink to="/account/post">
+        <NavLink to="/conta/postar">
           <AddPhoto />
           {mobile && 'Add photo'}
         </NavLink>

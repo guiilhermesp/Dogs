@@ -12,6 +12,7 @@
   animation: scaleUp 0.3s forwards;
 }
 
+
 .single.photo {
   grid-template-columns: 1fr;
   height: auto;

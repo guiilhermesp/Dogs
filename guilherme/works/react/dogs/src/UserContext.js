@@ -22,7 +22,7 @@ export const UserStorage = ({ children }) => {
           const response = await fetch(url, options);
           if (!response.ok) throw new Error('Invalid token!');
           await getUser(token);
-          navigate('/conta');
+          // navigate('/conta'); final project doesn't have it
         } catch (err) {
           userLogout();
         } finally {
@@ -47,14 +47,17 @@ export const UserStorage = ({ children }) => {
     try {
       setError(null);
       setLoading(true);
+      // console.log('user: ', username, ' pass: ', password);
       const { url, options } = TOKEN_POST({ username, password });
       const tokenRes = await fetch(url, options);
+      if (tokenRes !== null || undefined) console.log('token: ', tokenRes);
       if (!tokenRes.ok) throw new Error(`Error: ${tokenRes.statusText}`);
       const { token } = await tokenRes.json();
       window.localStorage.setItem('token', token);
       await getUser(token);
-      navigate('/account');
+      navigate('/conta');
     } catch (err) {
+      console.log('teste');
       setError(err.message);
       setLogin(false);
     } finally {
